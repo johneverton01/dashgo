@@ -3,10 +3,11 @@ import { LinkProps as ChakraLinksProps } from "@chakra-ui/react"
 
 export interface INavSectionProps {
 	title: string;
-	children: ReactNode
+	children: ReactNode;
 }
 
 export interface INavLinkProps extends ChakraLinksProps {
 	icon: ElementType;
 	children: string;
+	href: string;
 }
