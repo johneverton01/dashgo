@@ -1,5 +1,6 @@
 import { Box, Button, Checkbox, Flex, Heading, Icon, Table, Tbody, Td, Text, Th, Thead, Tr, useBreakpointValue } from "@chakra-ui/react";
 import Link from "next/link";
+import { useEffect } from "react";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Header, Pagination, Sidebar } from "../../components";
 
@@ -8,6 +9,12 @@ export default function UserList() {
 		base: false,
 		lg: true
 	});
+
+	useEffect(() => {
+		fetch('/api/users')
+		.then(response => response.json())
+		.then(data => console.log(data))
+	}, [])
 
 	return (
 		<Box>
