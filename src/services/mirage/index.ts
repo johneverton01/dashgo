@@ -29,11 +29,11 @@ export function makeServer() {
     },
 
     seeds(server) { 
-      server.createList('user', 200)
+      server.createList('user', 20)
     },
 
     routes() {
-      this.urlPrefix = 'http://localhost:3000';
+      this.urlPrefix = 'http://localhost:3002';
       this.namespace = 'api';
       this.timing = 750;
 
