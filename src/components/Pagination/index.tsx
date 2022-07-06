@@ -27,6 +27,14 @@ export function Pagination({
 		? generatePagesArray(currentPage, Math.min(currentPage + siblingsCount, lastPage))
 		: [];
 
+	const initCount = currentPage > 1 
+		? (registerPerPage * (currentPage - 1)) + 1
+		: 1
+
+	const endCount = currentPage > 1 
+	? (registerPerPage * currentPage)
+	: registerPerPage
+
 	return (
 		<Stack
 			direction={["column", "row"]}
@@ -36,7 +44,7 @@ export function Pagination({
 			spacing="6"
 		>
 			<Box>
-				<strong>{currentPage}</strong> - <strong>{lastPage}</strong> de <strong>{totalCountOfRegisters}</strong>
+				<strong>{initCount}</strong> - <strong>{endCount}</strong> de <strong>{totalCountOfRegisters}</strong>
 			</Box>
 			<HStack spacing="2">
 
